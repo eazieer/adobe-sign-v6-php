@@ -397,11 +397,11 @@ class AdobeSign
         return $this->parseResponse($res);
     }
 
-    public function updateAgreementStatus($agreementId, array $agreementStatusUpdateInfo, array $headers = [])
+    public function updateAgreementState($agreementId, array $agreementStatusUpdateInfo, array $headers = [])
     {
         $request = $this->provider->getAuthenticatedRequest(
             'PUT',
-            "$this->baseUri/$this->version/agreements/$agreementId/status",
+            "$this->baseUri/$this->version/agreements/$agreementId/state",
             $this->accessToken, [
                 'headers' => array_merge([
                     'Content-Type' => 'application/json'
